@@ -13,7 +13,7 @@ import {getHomeMultidata} from "../../network/home";
 export default {
   name: "Home",
   components: {NavBar},
-  created:(){
+  created(){
     //1.请求多个数据
     getHomeMultidata().then(res=>{
       console.log(res);
