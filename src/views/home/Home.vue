@@ -3,16 +3,28 @@
     <nav-bar class="home-nav">
       <div slot="center">购物车</div>
     </nav-bar>
+    <swiper>
+      <swiper-item v-for="item in banners">
+        <a :href="item.link">
+          <img :src="item.image" alt="">
+        </a>
+      </swiper-item>
+    </swiper>
   </div>
 </template>
 
 <script>
 import NavBar from "../../components/common/navbar/NavBar";
 import {getHomeMultidata} from "../../network/home";
+import {Swiper,SwiperItem} from '../../components/common/swiper'
 
 export default {
   name: "Home",
-  components: {NavBar},
+  components: {
+    NavBar,
+    Swiper,
+    SwiperItem
+  },
   data(){
     return {
       //定义一个初始数据为空的banner域
